@@ -1,0 +1,42 @@
+Welcome <%= @user.name  %>!
+Member of <%= @user.teamName%> Team
+<% if @user.id.eql?(1) && !@user.admin%>
+  <% @user.toggle!(:admin)%>
+<% else %>
+  <% if @user.admin.nil? %>
+    <% @user.toggle!(:admin) %>
+    <% @user.toggle!(:admin) %>
+  <% end %>
+<% end %>
+<div class="center jumbotron">
+  <h2>Race Day Schedule</h2>
+  <table>
+    <tr><td>7:00 a.m. - 8:15 a.m.</td><td> Race registration</td></tr>
+    <tr><td>8:25 a.m. - 8:50 a.m.</td><td> Pre-race briefing</td></tr>
+    <tr><td>9:00 a.m.</td><td>Race begins</td></tr>
+    <tr><td>10:30 a.m.</td><td>Awards Ceremony</td></tr>
+    <tr><td>12:00 p.m.</td><td>Cookout and concert</td></tr>
+  </table>
+  </td><td>
+
+  
+</div>
+
+<div class="center jumbotron">
+  <img  id ="map" alt="Map of the course" src="/assets/map.png" />
+</div>
+<div class="center jumbotron">
+  <h2>My Teammates</h2>
+  <% if !User.first.nil?%>
+    <% i = 1%>
+    <% while i <= User.count do %>
+      <% if User.find(i).teamName.eql?(@user.teamName) %>
+        <% if !User.find(i).email.eql?(@user.email) %>
+          <%= User.find(i).name  %> <br>
+        <% end %>
+      <% end %>
+      <% i += 1 %>
+    <% end %>
+  <% end %>
+  
+</div>

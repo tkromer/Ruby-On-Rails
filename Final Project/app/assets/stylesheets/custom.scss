@@ -1,0 +1,185 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* universal */
+
+body {
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 28pt;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+header {
+  width: 100%;
+}
+
+#navLink {
+  color: white;
+  font-size: 1.49em;
+  text-align: left;
+}
+
+#logo {
+  float: left;
+  margin: auto;
+  font-size: 1.9em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#title{
+  padding-left: 250px;
+  padding-top: 10px;
+}
+
+#button{
+  padding-left: 100px;
+  
+}
+
+#pic{
+  height: 150px;
+  padding-left: 1px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+#loginField {
+  float: right;
+  width: 200px;
+  line-height: 10px;
+}
+
+#signupBtn {
+  float: right;
+  width: 90px;
+  margin-left: 10px;
+}
+
+#loginBtn {
+  float: right;
+  width: 90px;
+  margin-right: 10px;
+}
+#logoutBtn {
+  float: right;
+  width: 90px;
+  margin-right: 10px;
+}
+
+/* Admin Page */
+table, th, td {
+  border: 1px solid black;
+  
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+#users {
+  width: 90%;
+}
+
+
+
+table {
+  margin: auto;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Page</title>
+  </head>
+  <body>
+    <h1>Administrator Page </h1>
+    <div class="center jumbotron">
+      <h3>Registered Users</h3>
+      <table id="users">
+        <tr>
+          <th>User Id</th>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>Phone Number</th>
+          <th>Age</th>
+          <th>Team</th>
+          <th>Admin</th>
+        </tr>
+        <% i = 1 %>
+        <% while i <= User.count do %>
+          <tr>
+            <td><%= User.find(i).id %></td>
+            <td><%= User.find(i).name  %></td>
+            <td><%= User.find(i).email  %></td>
+            <td><%= User.find(i).phoneNum  %></td>
+            <td><%= User.find(i).age  %></td>
+            <td><%= User.find(i).teamName  %></td>
+            <td><%= User.find(i).admin  %></td>
+          </tr>
+          <% i += 1  %>
+        <% end  %>
+      </table>
+    </div>
+  </body>
+</html>
